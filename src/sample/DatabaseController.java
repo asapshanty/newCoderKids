@@ -1,23 +1,31 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
+import javafx.event.ActionEvent;
 
 
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.net.URL;
+import java.util.Arrays;
+import java.util.ResourceBundle;
+//import java.awt.event.ActionEvent;
 
-public class DatabaseController {
+public class DatabaseController  { //added implement Initializable
 
     private Scene returnScene;
 
     public void setReturnScene(Scene scene){this.returnScene = scene;}
 
-    //Employee Tab
+    //EMPLOYEE TAB
+
+    //Text fields
+   // private List<TextField> fieldList;
     @FXML
     private TextField empFirstName;
     @FXML
@@ -37,8 +45,15 @@ public class DatabaseController {
     @FXML
     private Button btnClrEmp;
 
+
+
     @FXML
     private Button btnExitEmp;
+
+       /* @FXML
+        private void closeAction (ActionEvent actionEvent) {
+            System.exit(0);
+        } */
 
     @FXML
     private Button btnAddEmp;
@@ -52,12 +67,23 @@ public class DatabaseController {
     @FXML
     private TableView empTable;
 
+   /*
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle){
+        fieldList = Arrays.asList(empFirstName, empLastName, empStatus, empType, empPhone, empHireDate, empTerminationDate);
+        clearFields();
+    }*/
+
     
 
 
-    //Inventory Tab
+    //INVENTORY TAB
 
-    //Classes Tab
+
+
+    //CLASSES TAB
+
+    //Text fields
     @FXML
     private TextField className;
     @FXML
@@ -77,13 +103,25 @@ public class DatabaseController {
     @FXML
     private TableView classTable;
 
-    //Schedule Tab
+
+    //SCHEDULE TAB
+
+    //Text fields
     @FXML
     private TextField schedClassID;
     @FXML
     private TextField schedClassCap;
+
+    //buttons
+
     @FXML
     private Button btnExitSch;
+
+        /*@FXML
+        private void closeAction (ActionEvent actionEvent) {
+            System.exit(0);
+        } */
+
     @FXML
     private Button btnClrSch;
     @FXML
@@ -95,9 +133,13 @@ public class DatabaseController {
     @FXML
     private TableView schedTable;
 
-    //Students
+
+    //STUDENTS TABLE
+
     @FXML
     private TableView studTable;
+
+    //Text fields
     @FXML
     private TextField stuFirstName;
     @FXML
@@ -108,10 +150,18 @@ public class DatabaseController {
     private TextField stuStatus;
     @FXML
     private TextField stuDOB;
+
+    //buttons
     @FXML
     private Button btnClrStu;
     @FXML
     private Button btnExitStu;
+
+        /*@FXML
+        private void closeAction (ActionEvent actionEvent) {
+            System.exit(0);
+        }*/
+
     @FXML
     private Button btnAddStu;
     @FXML
@@ -120,10 +170,16 @@ public class DatabaseController {
     private Button btnUpdStu;
 
 
-    // Reports
-    //Guardians
+    // REPORTS TAB
+
+
+
+    //GUARDIANS TAB
+
     @FXML
     private TableView guarTable;
+
+    //Text fields
     @FXML
     private TextField guarFirstName;
     @FXML
@@ -142,14 +198,25 @@ public class DatabaseController {
     private TextField guarPhone;
     @FXML
     private TextField guarEmail;
+
+    //buttons
     @FXML
     private Button btnClrGua;
+
     @FXML
     private Button btnExitGua;
+
+        @FXML
+        private void closeAction (ActionEvent actionEvent) {
+            System.exit(0);
+        }
+
     @FXML
     private Button btnAddGua;
+
     @FXML
     private Button btnDelGua;
+
     @FXML
     private Button btnUpdGua;
 

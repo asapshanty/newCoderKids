@@ -75,7 +75,7 @@
                 <AnchorPane prefHeight="251.0" prefWidth="258.0">
                     <children>
                         <Button fx:id="btnClrEmp" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
-                        <Button fx:id="btnExitEmp"  layoutX="52.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Exit" />
+                        <Button fx:id="btnExitEmp" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                         <Button fx:id="btnAddEmp" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                         <Button fx:id="btnDelEmp" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
                         <Button fx:id="btnUpdEmp" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" text="Update" />
@@ -96,16 +96,29 @@
                      <children>
                         <TabPane layoutY="28.0" prefHeight="620.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
                           <tabs>
-                            <Tab text="Untitled Tab 1">
+                            <Tab text="Inventory List">
                               <content>
-                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="700.0" />
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="700.0">
+                                       <children>
+                                          <TableView prefHeight="588.0" prefWidth="200.0">
+                                            <columns>
+                                              <TableColumn prefWidth="75.0" text="C1" />
+                                              <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                          </TableView>
+                                       </children></AnchorPane>
                               </content>
                             </Tab>
-                            <Tab text="Untitled Tab 2">
+                            <Tab text="Inventory Assignment">
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                               </content>
                             </Tab>
+                              <Tab text="Service">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                </content>
+                              </Tab>
                           </tabs>
                            <padding>
                               <Insets left="20.0" right="20.0" />
@@ -153,7 +166,7 @@
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
                                     <Button fx:id="btnClrClass" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
-                                    <Button fx:id="btnExitClass" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Exit" />
+                                    <Button fx:id="btnExitClass" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddClass" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelClass" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
                                     <Button fx:id="btnUpdClass" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" text="Update" />
@@ -196,7 +209,7 @@
                             <AnchorPane prefHeight="251.0" prefWidth="265.0">
                                 <children>
                                     <Button fx:id="btnClrSch" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
-                                    <Button fx:id="btnExitSch" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Exit" />
+                                    <Button fx:id="btnExitSch" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddSch" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelSch" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
                                     <Button fx:id="btnUpdSch" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" text="Update" />
@@ -256,7 +269,7 @@
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
                                     <Button fx:id="btnClrStu" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
-                                    <Button fx:id="btnExitStu" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Exit" />
+                                    <Button fx:id="btnExitStu" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddStu" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelStu" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
                                     <Button fx:id="btnUpdStu" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" text="Update" />
@@ -341,7 +354,7 @@
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
                                     <Button fx:id="btnClrGua" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
-                                    <Button fx:id="btnExitGua" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="66.0" text="Exit" />
+                                    <Button fx:id="btnExitGua" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddGua" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelGua" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
                                     <Button fx:id="btnUpdGua" layoutX="95.0" layoutY="46.0" mnemonicParsing="false" text="Update" />

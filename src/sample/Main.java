@@ -17,7 +17,7 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
             //Parent parent = FXMLLoader.load(getClass().getResource("img/login.png"));
             primaryStage.setTitle("CoderKids");
-            primaryStage.setScene(new Scene(root, 600, 400));
+            primaryStage.setScene(new Scene(root, 900, 700));
             primaryStage.setMinWidth(primaryStage.getScene().getWidth());
             primaryStage.setMinHeight(primaryStage.getScene().getHeight());
             primaryStage.centerOnScreen();

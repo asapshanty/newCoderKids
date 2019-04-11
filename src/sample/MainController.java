@@ -107,17 +107,9 @@ public class MainController {
 
     //FIX SOMETHING HERE TO SWITCH SCREENS basically set scene in database controller
     private void switchToViewScreen() {
-        //Parent root;
+
         try{
 
-
-            /*
-            root = FXMLLoader.load(getClass().getClassLoader().getResource("database.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("CoderKids");
-            stage.setScene(new Scene(root, 700, 900));
-            stage.show();
-            ((Node)(event.getSource())).getScene().getWindow().hide();*/
 
             Display display= new Display(frame.getScene());
             display.addScreen("database", FXMLLoader.load(getClass().getResource("database.fxml")));
@@ -150,9 +142,5 @@ public class MainController {
     }
 
 
-/*
-    public void doLogin(ActionEvent actionEvent) throws IOException {
-       // Stage Parent = (Stage) ((Node))
 
-    }*/
 }
