@@ -3,7 +3,7 @@ package sample;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class Inventory {
+public class Employee {
 
     ///////////////////// EMPLOYEE TAB /////////////////////
 
@@ -17,8 +17,8 @@ public class Inventory {
     private final StringProperty terminationDate;
 
     //Default constructor
-    public Inventory(String status,String type, String firstName, String lastName, String phoneNumber, String hireDate, String terminationDate){
-       //this.id = id;
+    public Employee(String id, String status, String type, String firstName, String lastName, String phoneNumber, String hireDate, String terminationDate) {
+        //this.id = new SimpleStringProperty(id);
         this.status = new SimpleStringProperty(status);
         this.type = new SimpleStringProperty(type);
         this.firstName = new SimpleStringProperty(firstName);
@@ -27,101 +27,75 @@ public class Inventory {
         this.hireDate = new SimpleStringProperty(hireDate);
         this.terminationDate = new SimpleStringProperty(terminationDate);
     }
+
     //Getters
-    
-
-    /*this is a constructor
-    public Inventory(int id, String status, String type, String firstName, String lastName, String phoneNumber, String hireDate, String terminationDate) {
-    this.id = id;
-    this.status = status;
-    this.type = type;
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.phoneNumber = phoneNumber;
-    this.hireDate = hireDate;
-    this.terminationDate = terminationDate;
-
-    }*/
-
-    @Override
-    public String toString(){return String.format("%s %s",status,type,firstName,lastName,phoneNumber,hireDate,terminationDate);}
-
- //   @Id if using these add repository
- //   @GeneratedValue(strategy = GenerationType.IDENTITY)
- //   @Column(name = "ID", nullable = false)
-    public int getId(){return id;}
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    //@Basic basically do this for each item on table
-   // @Column(name = "STATUS", nullable = false, length = 24)
     public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
+        return status.get();
     }
 
     public String getType() {
-        return type;
+        return type.get();
+    }
+    public String getFirstName(){
+        return firstName.get();
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public String getLastName(){ return lastName.get();}
+    public String getPhoneNumber(){return phoneNumber.get();}
+    public String getHireDate(){return hireDate.get();}
+    public String getTerminationDate(){return terminationDate.get();}
+
+    //setters
+    public void setStatus(String value) {
+        this.status.set(value);
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setType(String value) {
+        this.type.set(value);
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstName(String value) {
+        this.firstName.set(value);
     }
 
-    public String getLastName() {
-        return lastName;
+    public void setLastName(String value) {
+        this.lastName.set(value);
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPhoneNumber(String value) {
+        this.phoneNumber.set(value);
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public void setHireDate(String value) {
+        this.hireDate.set(value);
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setTerminationDate(String value) {
+        this.terminationDate.set(value);
     }
 
-    public String getHireDate() {
-        return hireDate;
-    }
+    //property values
+    public StringProperty statusProperty(){return status;}
+    public StringProperty typeProperty(){return type;}
+    public StringProperty firstNameProperty(){return firstName;}
+    public StringProperty lastNameProperty(){return lastName;}
+    public StringProperty phoneNumberProperty(){return phoneNumber;}
+    public StringProperty hireDateProperty(){return hireDate;}
+    public StringProperty terminationDateProperty(){return terminationDate;}
 
-    public void setHireDate(String hireDate) {
-        this.hireDate = hireDate;
-    }
 
-    public String getTerminationDate() {
-        return terminationDate;
-    }
-
-    public void setTerminationDate(String terminationDate) {
-        this.terminationDate = terminationDate;
-    }
-    /*
     @Override
-    public boolean equals (Object o){
-        if (this == o) return true;
-        if (o== null) || getClass()! = o.getClass() return false;
-        Inventory
-    }*/
-
-
-
+    public String toString() {
+        return String.format("%s %s", status, type, firstName, lastName, phoneNumber, hireDate, terminationDate);
+    }
 
 
 
 }
+
+
+
+
+
+
+

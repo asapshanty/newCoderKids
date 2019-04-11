@@ -19,7 +19,7 @@ import org.w3c.dom.Node;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-//import cis3365.application.core.Database;
+//import cis3365.application.core.Inventory;
 //import cis3365.application.core.Information;
 
 

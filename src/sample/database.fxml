@@ -21,16 +21,16 @@
           <Tab text="Employees">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="667.0" prefWidth="634.0">
-                  <TableView prefHeight="772.0" prefWidth="641.0" BorderPane.alignment="CENTER">
+                  <TableView fx:id="empTable" prefHeight="772.0" prefWidth="641.0" BorderPane.alignment="CENTER">
                       <columns>
-                          <TableColumn prefWidth="40.99998474121094" text="ID" />
-                          <TableColumn prefWidth="59.0" text="Status" />
-                          <TableColumn prefWidth="58.0" text="Type" />
-                          <TableColumn prefWidth="88.0" text="First Name" />
-                          <TableColumn prefWidth="90.0" text="Last Name" />
-                          <TableColumn prefWidth="114.0" text="Phone Number" />
-                          <TableColumn prefWidth="75.0" text="Hire Date" />
-                          <TableColumn prefWidth="115.0" text="Termination Date" />
+                          <TableColumn fx:id="idColumn" prefWidth="40.99998474121094" text="ID" />
+                          <TableColumn fx:id="statusColumn" prefWidth="59.0" text="Status" />
+                          <TableColumn fx:id="typeColumn" prefWidth="58.0" text="Type" />
+                          <TableColumn fx:id="fnameColumn" prefWidth="88.0" text="First Name" />
+                          <TableColumn fx:id="lnameColumn" prefWidth="90.0" text="Last Name" />
+                          <TableColumn fx:id="phoneColumn" prefWidth="114.0" text="Phone Number" />
+                          <TableColumn fx:id="hdateColumn" prefWidth="75.0" text="Hire Date" />
+                          <TableColumn fx:id="tdateColumn" prefWidth="115.0" text="Termination Date" />
                       </columns>
                   </TableView>
                      <VBox prefHeight="670.0" prefWidth="259.0" AnchorPane.leftAnchor="641.0" AnchorPane.rightAnchor="0.0">
@@ -74,7 +74,7 @@
                     </VBox.margin></TextField>
                 <AnchorPane prefHeight="251.0" prefWidth="258.0">
                     <children>
-                        <Button fx:id="btnClrEmp" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
+                        <Button fx:id="btnClrEmp" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleClearSelection" prefHeight="27.0" prefWidth="65.0" text="Clear" />
                         <Button fx:id="btnExitEmp" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                         <Button fx:id="btnAddEmp" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                         <Button fx:id="btnDelEmp" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
@@ -100,10 +100,15 @@
                               <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="478.0" prefWidth="700.0">
                                        <children>
-                                          <TableView prefHeight="588.0" prefWidth="200.0">
+                                          <TableView prefHeight="588.0" prefWidth="532.0">
                                             <columns>
-                                              <TableColumn prefWidth="75.0" text="C1" />
-                                              <TableColumn prefWidth="75.0" text="C2" />
+                                              <TableColumn prefWidth="35.0" text="ID" />
+                                              <TableColumn prefWidth="76.0" text="Checkout" />
+                                                <TableColumn prefWidth="62.0" text="Service" />
+                                                <TableColumn prefWidth="61.0" text="Device" />
+                                                <TableColumn prefWidth="86.0" text="Accessory" />
+                                                <TableColumn prefWidth="101.0" text="Check In" />
+                                                <TableColumn prefWidth="111.0" text="Physical Count" />
                                             </columns>
                                           </TableView>
                                        </children></AnchorPane>
@@ -165,7 +170,7 @@
                             </TextField>
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
-                                    <Button fx:id="btnClrClass" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
+                                    <Button fx:id="btnClrClass" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleClearSelection" prefHeight="27.0" prefWidth="65.0" text="Clear" />
                                     <Button fx:id="btnExitClass" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddClass" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelClass" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
@@ -208,7 +213,7 @@
                                 </VBox.margin></TextField>
                             <AnchorPane prefHeight="251.0" prefWidth="265.0">
                                 <children>
-                                    <Button fx:id="btnClrSch" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
+                                    <Button fx:id="btnClrSch" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleClearSelection" prefHeight="27.0" prefWidth="65.0" text="Clear" />
                                     <Button fx:id="btnExitSch" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddSch" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelSch" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
@@ -268,7 +273,7 @@
                                 </VBox.margin></TextField>
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
-                                    <Button fx:id="btnClrStu" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
+                                    <Button fx:id="btnClrStu" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleClearSelection" prefHeight="27.0" prefWidth="65.0" text="Clear" />
                                     <Button fx:id="btnExitStu" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddStu" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelStu" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
@@ -353,7 +358,7 @@
                                 </VBox.margin></TextField>
                             <AnchorPane prefHeight="251.0" prefWidth="258.0">
                                 <children>
-                                    <Button fx:id="btnClrGua" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="65.0" text="Clear" />
+                                    <Button fx:id="btnClrGua" layoutX="133.0" layoutY="98.0" mnemonicParsing="false" onAction="#handleClearSelection" prefHeight="27.0" prefWidth="65.0" text="Clear" />
                                     <Button fx:id="btnExitGua" layoutX="52.0" layoutY="98.0" mnemonicParsing="false" onAction="#closeAction" prefHeight="27.0" prefWidth="66.0" text="Exit" />
                                     <Button fx:id="btnAddGua" layoutX="24.0" layoutY="46.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="60.0" text=" Add " />
                                     <Button fx:id="btnDelGua" layoutX="172.0" layoutY="46.0" mnemonicParsing="false" text="Delete" />
