@@ -7,7 +7,7 @@ public class Employee {
 
     ///////////////////// EMPLOYEE TAB /////////////////////
 
-    private int id;
+    //private final StringProperty id;
     private final StringProperty status;
     private final StringProperty type;
     private final StringProperty firstName;
@@ -16,8 +16,19 @@ public class Employee {
     private final StringProperty hireDate;
     private final StringProperty terminationDate;
 
-    //Default constructor
-    public Employee(String id, String status, String type, String firstName, String lastName, String phoneNumber, String hireDate, String terminationDate) {
+    //Specific constructor
+    public Employee(String firstname, String lastName)
+    {
+        this.firstName = new SimpleStringProperty(firstname);
+        this.lastName = new SimpleStringProperty(lastName);
+
+        this.status = new SimpleStringProperty("");
+        this.type = new SimpleStringProperty("");
+        this.phoneNumber = new SimpleStringProperty("");
+        this.hireDate = new SimpleStringProperty("");
+        this.terminationDate = new SimpleStringProperty("");
+    }
+    public Employee(String firstName, String lastName, String status, String type, String phoneNumber, String hireDate, String terminationDate) {
         //this.id = new SimpleStringProperty(id);
         this.status = new SimpleStringProperty(status);
         this.type = new SimpleStringProperty(type);
