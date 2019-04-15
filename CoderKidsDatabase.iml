@@ -27,5 +27,6 @@
     <orderEntry type="library" name="mysql:mysql-connector-java:5.1.40" level="project" />
     <orderEntry type="library" name="JPA 2.1-2.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.microsoft.sqlserver:mssql-jdbc:7.2.1.jre11" level="project" />
+    <orderEntry type="library" name="Maven: biz.aQute.bnd:biz.aQute.bndlib:3.3.0" level="project" />
   </component>
 </module>

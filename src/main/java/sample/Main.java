@@ -15,7 +15,7 @@ public class Main extends Application {
 
 
             Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-            //Parent parent = FXMLLoader.load(getClass().getResource("img/login.png"));
+            Parent parent = FXMLLoader.load(getClass().getResource("/img/login.png"));
             primaryStage.setTitle("CoderKids");
             primaryStage.setScene(new Scene(root, 900, 700));
             primaryStage.setMinWidth(primaryStage.getScene().getWidth());
@@ -26,7 +26,7 @@ public class Main extends Application {
 
         } catch (Exception er) {
             System.out.println("ERROR !" + er.getMessage());
-            DBConnection.ClearDatabaseInfo();
+           // DBConnection.ClearDatabaseInfo();
         }
 
     }

@@ -37,13 +37,13 @@ public class DBConnection {
     }
 
 
-    public static void ClearDatabaseInfo() {
-    }
+//    public static void ClearDatabaseInfo() {
+//    }
 
     public static com.mysql.jdbc.Connection GetConnection() {
         try{
             String driver ="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-          //  String url = getUrl();
+            //String url = getUrl();
             Class.forName(driver);
 
             Connection conn = DriverManager.getConnection(url, user, pass);
@@ -63,7 +63,7 @@ public class DBConnection {
             return null;
         }
     }
-
+//
 //        if((!pass.isEmpty()||pass!=null)&&(!user.isEmpty()||user!=null)){
 //            return GetConnection(user, pass);
 //        }
